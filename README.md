@@ -1,4 +1,4 @@
-This repository was forked from (GeneaLabs/laravel-nova-prepopulate-searchable)[https://github.com/GeneaLabs/laravel-nova-prepopulate-searchable] and they deserve all of the credit. We've only made minor changes to accommodate our software.
+This repository was forked from [GeneaLabs/laravel-nova-prepopulate-searchable](https://github.com/GeneaLabs/laravel-nova-prepopulate-searchable) and they deserve all of the credit. We've only made minor changes to accommodate our software.
 
 # Prepoulate Searchable for Laravel Nova
 **A tool to allow BelongsTo searchable fields to be pre-populated with data**

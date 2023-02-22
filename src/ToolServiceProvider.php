@@ -9,7 +9,7 @@ use Laravel\Nova\Nova;
 
 class ToolServiceProvider extends ServiceProvider
 {
-    public function boot() : void
+    public function boot(): void
     {
         Nova::serving(function (ServingNova $event) {
             BelongsTo::macro('prepopulate', function ($query = null) {
@@ -21,7 +21,7 @@ class ToolServiceProvider extends ServiceProvider
 
             Nova::script(
                 'laravel-nova-prepopulate-searchable',
-                __DIR__ . '/../dist/js/tool.js'
+                __DIR__.'/../dist/js/tool.js'
             );
         });
     }

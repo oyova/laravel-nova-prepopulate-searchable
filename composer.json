@@ -30,6 +30,9 @@
         "laravel/nova": "^3.31",
         "illuminate/support": "^9.0"
     },
+    "require-dev": {
+        "oyova/php-cs-fixer": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "Oyova\\LaravelNovaPrepopulateSearchable\\": "src/"

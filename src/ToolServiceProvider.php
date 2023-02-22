@@ -1,6 +1,6 @@
 <?php
 
-namespace GeneaLabs\NovaPrepopulateSearchable;
+namespace Oyova\LaravelNovaPrepopulateSearchable;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
@@ -20,7 +20,7 @@ class ToolServiceProvider extends ServiceProvider
             });
 
             Nova::script(
-                'nova-prepopulate-searchable',
+                'laravel-nova-prepopulate-searchable',
                 __DIR__ . '/../dist/js/tool.js'
             );
         });

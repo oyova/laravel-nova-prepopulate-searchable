@@ -1,5 +1,3 @@
-This package has been archived until such time that it can be brought up-to-date with Laravel Nova. We have stopped using Laravel Nova, and no longer have a license for it. As such we currently cannot justify further development on this package. Please check here for availability of similar packages: https://novapackages.com
-
 # Prepoulate Searchable for Laravel Nova
 **A tool to allow BelongsTo searchable fields to be pre-populated with data**
 
@@ -7,12 +5,6 @@ This package has been archived until such time that it can be brought up-to-date
 [![Total Downloads](https://img.shields.io/packagist/dt/alexbowers/nova-prepopulate-searchable.svg?style=flat-square)](https://packagist.org/packages/genealabs/nova-prepopulate-searchable)
 
 ![Prepopulate Search](https://github.com/genealabs/nova-prepopulate-searchable/blob/master/screenshots/example.gif?raw=true)
-
-
-```diff
-- Alert: the namespace of this repo has changed from `alexbowers/nova-prepopulate-searchable`
-- to `genealabs/nova-prepopulate-searchable`. Please update your composer.json file before updating!
-```
 
 ## Sponsors
 We thank the following sponsors for their generosity. Please take a moment to check them out:

@@ -131,7 +131,7 @@
 
 <script>
     import _ from 'lodash';
-    import storage from '@/storage/BelongsToFieldStorage';
+    import storage from '../storage/BelongsToFieldStorage';
     import {
         FormField,
         TogglesTrashed,
@@ -154,7 +154,6 @@
         data: () => ({
             availableResources: [],
             hasPerformedPrepopulation: false,
-            initializingWithExistingResource: false,
             relationModalOpen: false,
             search: '',
             selectedResource: null,
@@ -178,7 +177,6 @@
                 // we'll have a belongsToId on the field, and we should prefill
                 // that resource in this field
                 if (this.editingExistingResource) {
-                    this.initializingWithExistingResource = true;
                     this.selectedResourceId = this.field.belongsToId;
                 }
 
@@ -186,7 +184,6 @@
                 // page we'll have a viaResource and viaResourceId in the params and
                 // should prefill the resource in this field with that information
                 if (this.creatingViaRelatedResource) {
-                    this.initializingWithExistingResource = true;
                     this.selectedResourceId = this.viaResourceId;
                 }
 
@@ -194,7 +191,6 @@
                     // If we should select the initial resource but the field is not
                     // searchable we should load all of the available resources into the
                     // field first and select the initial option
-                    this.initializingWithExistingResource = false;
                     this.getAvailableResources().then(() => this.selectInitialResource());
                 } else if (this.shouldSelectInitialResource && this.isSearchable) {
                     // If we should select the initial resource and the field is
@@ -259,12 +255,11 @@
                         this.queryParams
                     )
                     .then(({ data: { resources, softDeletes, withTrashed } }) => {
-                        if (this.initializingWithExistingResource || !this.isSearchable) {
+                        if (!this.isSearchable) {
                             this.withTrashed = withTrashed;
                         }
 
                         // Turn off initializing the existing resource after the first time
-                        this.initializingWithExistingResource = false;
                         this.availableResources = resources;
                         this.softDeletes = softDeletes;
                     });
@@ -373,7 +368,7 @@
                 return {
                     params: {
                         current: this.selectedResourceId,
-                        first: this.initializingWithExistingResource,
+                        first: false,
                         search: this.search,
                         withTrashed: this.withTrashed,
                         resourceId: this.resourceId,
